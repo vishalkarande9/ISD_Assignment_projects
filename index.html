@@ -1,0 +1,143 @@
+<!-- 
+<html>
+   <body>
+      <form action = "testServlet" method = "POST">
+         First Name: <input type = "text" name = "first_name"></input>
+         <br />
+         Last Name: <input type = "text" name = "last_name"></input>
+         <br />
+         <input type = "submit" value = "Submit"></input>
+      </form>
+   </body>
+</html>
+
+-->
+
+
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+ 
+    <script>
+        function validate() {
+        
+
+            if(document.getElementById('oval').checked || document.getElementById('rect').checked || document.getElementById('roundrect').checked){
+                if(document.getElementById('bold').checked || document.getElementById('italic').checked ){
+                return true;
+            } else{
+                alert('Please select FontStyle');
+                return false;
+            }
+               
+            } else{
+                alert('Please select shape');
+                return false;
+            }   
+
+        
+        	     	
+        }
+    </script>
+    
+    <title>
+        Applet--Form
+    </title>
+</head>
+
+<body>
+    <div class="content">
+                <div class="body">
+                    <div class="row">
+                        <div class="col s5">
+                            <form class="col s12" action="testServlet" method="POST" onsubmit="return validate(this)">
+                                <div class="section">
+                                    <h5>Applet Properties</h5>
+                                    <label for="appheight">Height</label>
+                                    <p class="range-field">
+                                        <input type="range" id="appheight" min="0" max="1000" name="app_height" />
+                                    </p>
+
+                                    <label for="appwidth">Width</label>
+                                    <p class="range-field">
+                                        <input type="range" id="appwidth" min="0" max="1000" name="app_width"/>
+                                    </p>
+
+                                </div>
+                                <div class="divider"></div>
+                                <div class="section">
+                                    <h5>Text Properties</h5>
+
+                                    <label for="message">Message</label>
+                                    <input id="message" type="text" name="message">
+
+                                    <label for="fontsize">Font Size</label>
+                                    <p class="range-field">
+                                        <input type="range" id="fontsize" min="0" max="100" name="font_size"/>
+                                    </p>
+
+                                    <label>Font Style</label>
+                                    <p>
+                                        <input className = 'fontName' type="checkbox" id="bold" name="font_style_bold"/>
+                                        <label className = 'label1' for="bold" id='fontName'><b>Bold</b></label>&nbsp; &nbsp;
+                                        <input className = 'fontName' type="checkbox" id="italic" name="font_style_italic"/>
+                                        <label className = 'label1' for="italic" id='fontName'><i>Italic</i></label><br/><br/>
+                                    </p>
+                                    <label>Font Color</label>&nbsp;
+                                    <input type="color" id="color1" name="font_color"/>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="section">
+                                    <h5>Shape Properties</h5>
+
+                                    <label for="height">Height</label>
+                                    <p class="range-field">
+                                        <input type="range" id="height" min="0" max="1000" name="shape_height"/>
+                                    </p>
+
+                                    <label for="width">Width</label>
+                                    <p class="range-field">
+                                        <input type="range" id="width" min="0" max="1000" name="shape_width" />
+                                    </p>
+                                    <p>Shape</p>
+                                    <input name="shape" type="radio" id="oval" value="OVAL" />
+                                    <label for="oval" className = 'label1'>Oval</label>
+                                    &nbsp;&nbsp;
+                                    <input name="shape" type="radio" id="rect" value="RECT"/>
+                                    <label for="rect" className = 'label1'>Rectangle</label>&nbsp;&nbsp;
+                                    <input name="shape" type="radio" id="roundrect" value="ROUDRECT" />
+                                    <label for="roundrect" className = 'label1'>Rounded Rectangle</label><br/><br/>
+                                    <p>Shape Color&nbsp;
+                                    <input type="color" id="color2" name="shape_color" />
+                                </div>
+                                <input type = "submit" value = "Submit" />
+                            </form>
+                        </div>
+
+                        <!-- 
+                                                            <button class="btn waves-effect waves-light" id='submit' type="button" name="SubmitButton" >Submit</button>
+
+                        <div class="col s7">
+                            <applet codebase="/form/applet" code="ShowShape.class" width="300" height="150" archive="ShowShape.jar">  
+								<param name="Message" value="Case 1">
+								<param name="Shape" value="OVAL">
+								<param name="BGColor" value="blue">
+								<param name="Color" value="red">
+								<param name="X" value = 200>
+								<param name="Y" value = 50>
+								<param name="FTStyle" value="REGULAR">
+								<param name="FTSize" value="35">
+							</applet>
+                        </div>
+                        -->
+
+                    </div>
+                </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/materialize.min.js"></script>
+</body>
+
+</html>
+
